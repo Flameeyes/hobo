@@ -43,6 +43,8 @@ module Hobo
               user.is_a?(value)
             elsif value.respond_to?(:include?)
               value.include?(user)
+            elsif value === true or value === false
+              value
             else
               value == user
             end
